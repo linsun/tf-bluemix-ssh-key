@@ -9,10 +9,10 @@ terraform {
 ##############################################################################
 # See the README for details on ways to supply these values
 provider "ibmcloud" {
-  bluemix_api_key = "${var.bxapikey}"
   softlayer_username = "${var.slusername}"
   softlayer_api_key = "${var.slapikey}"
   softlayer_account_number = "${var.slaccountnum}"
+  skip_service_configuration = ["bluemix"]
 }
 
 ##############################################################################
@@ -28,9 +28,6 @@ resource "ibmcloud_infra_ssh_key" "ssh_key" {
 ##############################################################################
 # Variables
 ##############################################################################
-variable bxapikey {
-  description = "Your Bluemix API Key."
-}
 variable slusername {
   description = "Your Softlayer username."
 }
