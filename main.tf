@@ -47,9 +47,11 @@ variable public_key {
 }
 variable key_label {
   description = "A label for the SSH key that gets created."
+  default = "testing schematics key label"
 }
 variable key_note {
   description = "A note for the SSH key that gets created."
+  default = "testing schematics key label"
 }
 
 ##############################################################################
